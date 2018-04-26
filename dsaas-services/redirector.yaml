@@ -4,3 +4,10 @@ services:
   path: homeless-templates/redirector.yaml
   url: https://github.com/openshiftio/saas-openshiftio/
   hash_length: 6
+  environments:
+  - name: staging
+    parameters:
+      IAMGE: prod.registry.centos.org/osio-prod/mattermost/nginx-redirector
+  - name: production
+    parameters:
+      IAMGE: registry.centos.org/mattermost/nginx-redirector

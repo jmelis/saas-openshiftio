@@ -49,7 +49,7 @@ objects:
                 configMapKeyRef:
                   name: redirector
                   key: redirector.type
-          image: registry.centos.org/mattermost/nginx-redirector:latest
+          image: ${IMAGE}:latest
           imagePullPolicy: Always
           name: redirector
           ports:
@@ -81,3 +81,6 @@ objects:
     type: ClusterIP
   status:
     loadBalancer: {}
+parameters:
+- name: IMAGE
+  value: registry.centos.org/mattermost/nginx-redirector
